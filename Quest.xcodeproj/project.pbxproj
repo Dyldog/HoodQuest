@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FCDF424A2BFA391600556061 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF42492BFA391500556061 /* PlaceDetailView.swift */; };
+		FCDF424C2BFA3A7A00556061 /* VisitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF424B2BFA3A7A00556061 /* VisitManager.swift */; };
+		FCDF42502BFAFB7300556061 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = FCDF424F2BFAFB7300556061 /* GRDB */; };
+		FCDF42542BFAFB7F00556061 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF42532BFAFB7F00556061 /* Database.swift */; };
+		FCDF42562BFAFBBD00556061 /* Database+Migrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF42552BFAFBBD00556061 /* Database+Migrator.swift */; };
+		FCDF42592BFAFC7F00556061 /* Visit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF42582BFAFC7F00556061 /* Visit.swift */; };
+		FCDF425B2BFB121700556061 /* PlaceTypesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF425A2BFB121700556061 /* PlaceTypesList.swift */; };
+		FCDF425D2BFB15DD00556061 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF425C2BFB15DC00556061 /* DefaultsKeys.swift */; };
+		FCDF42602BFB15F200556061 /* DylKit in Frameworks */ = {isa = PBXBuildFile; productRef = FCDF425F2BFB15F200556061 /* DylKit */; };
+		FCEB70082BFA2BAE0045E5DA /* QuestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB70072BFA2BAE0045E5DA /* QuestApp.swift */; };
+		FCEB700A2BFA2BAE0045E5DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB70092BFA2BAE0045E5DA /* ContentView.swift */; };
+		FCEB700C2BFA2BB90045E5DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEB700B2BFA2BB90045E5DA /* Assets.xcassets */; };
+		FCEB700F2BFA2BB90045E5DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCEB700E2BFA2BB90045E5DA /* Preview Assets.xcassets */; };
+		FCEB70162BFA2C0E0045E5DA /* OpenMapsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB70152BFA2C0E0045E5DA /* OpenMapsAPI.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FCDF42492BFA391500556061 /* PlaceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailView.swift; sourceTree = "<group>"; };
+		FCDF424B2BFA3A7A00556061 /* VisitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitManager.swift; sourceTree = "<group>"; };
+		FCDF42532BFAFB7F00556061 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		FCDF42552BFAFBBD00556061 /* Database+Migrator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Database+Migrator.swift"; sourceTree = "<group>"; };
+		FCDF42582BFAFC7F00556061 /* Visit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visit.swift; sourceTree = "<group>"; };
+		FCDF425A2BFB121700556061 /* PlaceTypesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTypesList.swift; sourceTree = "<group>"; };
+		FCDF425C2BFB15DC00556061 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		FCEB70042BFA2BAE0045E5DA /* Quest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEB70072BFA2BAE0045E5DA /* QuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestApp.swift; sourceTree = "<group>"; };
+		FCEB70092BFA2BAE0045E5DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FCEB700B2BFA2BB90045E5DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCEB700E2BFA2BB90045E5DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FCEB70152BFA2C0E0045E5DA /* OpenMapsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenMapsAPI.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCEB70012BFA2BAE0045E5DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDF42502BFAFB7300556061 /* GRDB in Frameworks */,
+				FCDF42602BFB15F200556061 /* DylKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FCDF42572BFAFC7800556061 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCDF42582BFAFC7F00556061 /* Visit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FCEB6FFB2BFA2BAE0045E5DA = {
+			isa = PBXGroup;
+			children = (
+				FCEB70062BFA2BAE0045E5DA /* Quest */,
+				FCEB70052BFA2BAE0045E5DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FCEB70052BFA2BAE0045E5DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB70042BFA2BAE0045E5DA /* Quest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCEB70062BFA2BAE0045E5DA /* Quest */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB70072BFA2BAE0045E5DA /* QuestApp.swift */,
+				FCEB70092BFA2BAE0045E5DA /* ContentView.swift */,
+				FCEB70152BFA2C0E0045E5DA /* OpenMapsAPI.swift */,
+				FCDF42492BFA391500556061 /* PlaceDetailView.swift */,
+				FCDF424B2BFA3A7A00556061 /* VisitManager.swift */,
+				FCDF42532BFAFB7F00556061 /* Database.swift */,
+				FCDF42552BFAFBBD00556061 /* Database+Migrator.swift */,
+				FCDF425A2BFB121700556061 /* PlaceTypesList.swift */,
+				FCDF425C2BFB15DC00556061 /* DefaultsKeys.swift */,
+				FCDF42572BFAFC7800556061 /* Model */,
+				FCEB700B2BFA2BB90045E5DA /* Assets.xcassets */,
+				FCEB700D2BFA2BB90045E5DA /* Preview Content */,
+			);
+			path = Quest;
+			sourceTree = "<group>";
+		};
+		FCEB700D2BFA2BB90045E5DA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB700E2BFA2BB90045E5DA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCEB70032BFA2BAE0045E5DA /* Quest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCEB70122BFA2BB90045E5DA /* Build configuration list for PBXNativeTarget "Quest" */;
+			buildPhases = (
+				FCEB70002BFA2BAE0045E5DA /* Sources */,
+				FCEB70012BFA2BAE0045E5DA /* Frameworks */,
+				FCEB70022BFA2BAE0045E5DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Quest;
+			packageProductDependencies = (
+				FCDF424F2BFAFB7300556061 /* GRDB */,
+				FCDF425F2BFB15F200556061 /* DylKit */,
+			);
+			productName = Quest;
+			productReference = FCEB70042BFA2BAE0045E5DA /* Quest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCEB6FFC2BFA2BAE0045E5DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FCEB70032BFA2BAE0045E5DA = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = FCEB6FFF2BFA2BAE0045E5DA /* Build configuration list for PBXProject "Quest" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCEB6FFB2BFA2BAE0045E5DA;
+			packageReferences = (
+				FCDF424E2BFAFB7300556061 /* XCRemoteSwiftPackageReference "GRDB" */,
+				FCDF425E2BFB15F200556061 /* XCLocalSwiftPackageReference "../DylKit" */,
+			);
+			productRefGroup = FCEB70052BFA2BAE0045E5DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCEB70032BFA2BAE0045E5DA /* Quest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCEB70022BFA2BAE0045E5DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCEB700F2BFA2BB90045E5DA /* Preview Assets.xcassets in Resources */,
+				FCEB700C2BFA2BB90045E5DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCEB70002BFA2BAE0045E5DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCDF42542BFAFB7F00556061 /* Database.swift in Sources */,
+				FCDF425B2BFB121700556061 /* PlaceTypesList.swift in Sources */,
+				FCEB700A2BFA2BAE0045E5DA /* ContentView.swift in Sources */,
+				FCEB70162BFA2C0E0045E5DA /* OpenMapsAPI.swift in Sources */,
+				FCEB70082BFA2BAE0045E5DA /* QuestApp.swift in Sources */,
+				FCDF425D2BFB15DD00556061 /* DefaultsKeys.swift in Sources */,
+				FCDF42562BFAFBBD00556061 /* Database+Migrator.swift in Sources */,
+				FCDF42592BFAFC7F00556061 /* Visit.swift in Sources */,
+				FCDF424A2BFA391600556061 /* PlaceDetailView.swift in Sources */,
+				FCDF424C2BFA3A7A00556061 /* VisitManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FCEB70102BFA2BB90045E5DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCEB70112BFA2BB90045E5DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCEB70132BFA2BB90045E5DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Quest/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HoodQuest;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do it!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.Quest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCEB70142BFA2BB90045E5DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Quest/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CW3378X23;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = HoodQuest;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Do it!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylan.Quest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCEB6FFF2BFA2BAE0045E5DA /* Build configuration list for PBXProject "Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCEB70102BFA2BB90045E5DA /* Debug */,
+				FCEB70112BFA2BB90045E5DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCEB70122BFA2BB90045E5DA /* Build configuration list for PBXNativeTarget "Quest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCEB70132BFA2BB90045E5DA /* Debug */,
+				FCEB70142BFA2BB90045E5DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		FCDF425E2BFB15F200556061 /* XCLocalSwiftPackageReference "../DylKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../DylKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FCDF424E2BFAFB7300556061 /* XCRemoteSwiftPackageReference "GRDB" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FCDF424F2BFAFB7300556061 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FCDF424E2BFAFB7300556061 /* XCRemoteSwiftPackageReference "GRDB" */;
+			productName = GRDB;
+		};
+		FCDF425F2BFB15F200556061 /* DylKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DylKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FCEB6FFC2BFA2BAE0045E5DA /* Project object */;
+}
