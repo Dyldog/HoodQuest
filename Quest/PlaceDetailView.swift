@@ -11,7 +11,7 @@ struct PlaceDetailView: View {
 	
 	let place: Place
 	@ObservedObject var visitManager: VisitManager
-	@State var visited: Bool = false
+	@State var visited: Bool
 	
 	init(place: Place, visitManager: VisitManager) {
 		self.place = place

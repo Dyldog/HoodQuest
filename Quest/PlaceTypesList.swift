@@ -13,10 +13,17 @@ struct PlaceType: Identifiable, Equatable, Codable {
 	var title: String
 	var query: String
 	
-	var queryString: String {
+	func queryString(area: String) -> String {
 		query
-			.components(separatedBy: "\n").map { "[\($0)]"}
-			.joined()
+			.components(separatedBy: "\n\n")
+			.map { section in
+				section.components(separatedBy: "\n").map { "[\($0)]"}
+					.joined()
+			}
+			.map {
+				"nw" + ($0.contains("[name") ? $0 : $0 + "[name~\".+\"]") + "(\(area));"
+			}
+			.joined(separator: "\n")
 	}
 }
 

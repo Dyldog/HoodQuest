@@ -23,7 +23,7 @@ class Database {
 		}
 		.shared(in: dbWriter)
 		.publisher()
-		.print()
+//		.print()
 		.map { _ in () }
 		.replaceError(with: ())
 		.eraseToAnyPublisher()
@@ -37,7 +37,7 @@ class Database {
 		try fileManager.createDirectory(at: folderURL, withIntermediateDirectories: true)
 		let dbURL = folderURL.appendingPathComponent("db.sqlite")
 
-		try! fileManager.removeItem(at: dbURL)
+//		try! fileManager.removeItem(at: dbURL)
 
 		let dbPool = try DatabasePool(path: dbURL.path)
 		return dbPool
