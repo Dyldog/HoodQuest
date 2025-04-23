@@ -18,6 +18,7 @@
 		FC0F93A62BFC2EF600628EA2 /* Publisher+AsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F93A52BFC2EF600628EA2 /* Publisher+AsResult.swift */; };
 		FC0F93A82BFC32C200628EA2 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F93A72BFC32C200628EA2 /* Area.swift */; };
 		FC0F93AA2BFC4E9F00628EA2 /* PlaceDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0F93A92BFC4E9F00628EA2 /* PlaceDebugView.swift */; };
+		FC286C6E2DB8CC1800A4C71F /* WayfinderKit in Frameworks */ = {isa = PBXBuildFile; productRef = FC286C6D2DB8CC1800A4C71F /* WayfinderKit */; };
 		FCDF424A2BFA391600556061 /* PlaceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF42492BFA391500556061 /* PlaceDetailView.swift */; };
 		FCDF424C2BFA3A7A00556061 /* VisitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDF424B2BFA3A7A00556061 /* VisitManager.swift */; };
 		FCDF42502BFAFB7300556061 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = FCDF424F2BFAFB7300556061 /* GRDB */; };
@@ -68,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC286C6E2DB8CC1800A4C71F /* WayfinderKit in Frameworks */,
 				FCDF42502BFAFB7300556061 /* GRDB in Frameworks */,
 				FCDF42602BFB15F200556061 /* DylKit in Frameworks */,
 			);
@@ -214,6 +216,7 @@
 			packageProductDependencies = (
 				FCDF424F2BFAFB7300556061 /* GRDB */,
 				FCDF425F2BFB15F200556061 /* DylKit */,
+				FC286C6D2DB8CC1800A4C71F /* WayfinderKit */,
 			);
 			productName = Quest;
 			productReference = FCEB70042BFA2BAE0045E5DA /* Quest.app */;
@@ -246,6 +249,7 @@
 			packageReferences = (
 				FCDF424E2BFAFB7300556061 /* XCRemoteSwiftPackageReference "GRDB" */,
 				FCDF425E2BFB15F200556061 /* XCLocalSwiftPackageReference "../DylKit" */,
+				FC286C6C2DB8CC1800A4C71F /* XCLocalSwiftPackageReference "../Wayfinder/WayfinderKit" */,
 			);
 			productRefGroup = FCEB70052BFA2BAE0045E5DA /* Products */;
 			projectDirPath = "";
@@ -506,6 +510,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
+		FC286C6C2DB8CC1800A4C71F /* XCLocalSwiftPackageReference "../Wayfinder/WayfinderKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../Wayfinder/WayfinderKit;
+		};
 		FCDF425E2BFB15F200556061 /* XCLocalSwiftPackageReference "../DylKit" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../DylKit;
@@ -524,6 +532,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FC286C6D2DB8CC1800A4C71F /* WayfinderKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WayfinderKit;
+		};
 		FCDF424F2BFAFB7300556061 /* GRDB */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FCDF424E2BFAFB7300556061 /* XCRemoteSwiftPackageReference "GRDB" */;

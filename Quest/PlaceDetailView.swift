@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import WayfinderKit
 
 struct PlaceDetailView: View {
 	
 	let place: Place
 	@ObservedObject var visitManager: VisitManager
 	@State var visited: Bool
+    @State var distance: String? = nil
 	
 	init(place: Place, visitManager: VisitManager) {
 		self.place = place
@@ -39,7 +41,18 @@ struct PlaceDetailView: View {
 					}
 				}
 			}
+            
+            if let location = place.location {
+                Wayfinder(destination: location.headable(withName: place.name)) { locationManager in
+                    distance = locationManager.distanceString(to: location)
+                }
+            }
+            
+            if let distance {
+                Text(distance)
+            }
 		}
+        .padding(.vertical, 24)
 	}
 }
 
