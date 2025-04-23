@@ -49,7 +49,7 @@ struct PlaceDetailView: View {
             }
             
             if let distance {
-                Text(distance)
+                Text(distance).bold()
             }
 		}
         .padding(.vertical, 24)

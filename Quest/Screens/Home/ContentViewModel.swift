@@ -16,6 +16,9 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 	@ObservedObject var visitManager: VisitManager
 	let api = OpenMapsAPI()
 	let locationManager = LocationManager()
+    
+    @Published private(set) var loading: Bool = false
+    @Published private(set) var error: String? = nil
 	
 	@Published private var currentLocation: CLLocation?
 	@Published private var area: Area?
@@ -34,6 +37,7 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		set {
 			objectWillChange.send()
 			PlaceType.selected = newValue
+            loading = true
 			loadPlaces()
 		}
 	}
@@ -94,6 +98,7 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		$level
 			.receive(on: RunLoop.main)
 			.sink { [weak self] _ in
+                self?.loading = true
 				self?.loadArea()
 			}
 			.store(in: &cancellables)
@@ -121,13 +126,15 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 	
 	private func handleError(_ error: Error) {
 		print(error)
+        self.error = error.asAPIError.errorDescription
+        self.loading = false
 	}
 	
 	private func loadArea() {
 		guard let currentLocation else { return }
 		
 		areaCancellable?.cancel()
-		
+                
 		areaCancellable = self.api.getArea(around: currentLocation, at: self.level)
 			.asResult()
 			.sink { [weak self] in
@@ -142,7 +149,7 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		guard let area, let selectedPlaceType else { return }
 		
 		placesCancellable?.cancel()
-		
+        		
 		placesCancellable = api.getLocations(in: area.id, for: selectedPlaceType)
 			.asResult()
 			.sink { [weak self] in
@@ -164,10 +171,17 @@ class ContentViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
 		
 		unvisitedPlaces = makeList(from: places.filter { visitManager.hasVisitedPlace($0) == false })
 		visitedPlaces = makeList(from: places.filter { visitManager.hasVisitedPlace($0) })
+        
+        loading = false
+        error = nil
 	}
 	
 	private func distance(from place: Place) -> Double {
 		guard let currentLocation, let place = place.location else { return -1 }
 		return currentLocation.distance(from: place)
 	}
+    
+    func refresh() {
+        loadArea()
+    }
 }

@@ -18,73 +18,11 @@ struct ContentView: View {
 	
 	var body: some View {
 		VStack(spacing: 0) {
-			ZStack {
-				HStack {
-					Spacer()
-					Button {
-						showDebug = true
-					} label: {
-						Image(systemName: "ant.fill")
-					}
-					.padding()
-				}
-				HStack {
-					Button {
-						viewModel.level = viewModel.level.higherLevel
-					} label: {
-						Image(systemName: "arrow.up")
-					}
-					.disabled(viewModel.level.canGoUp == false)
-					
-					Text("\(viewModel.placeTitle ?? "Finding location...")").bold()
-					
-					Button {
-						viewModel.level = viewModel.level.lowerLevel
-					} label: {
-						Image(systemName: "arrow.down")
-					}
-					.disabled(viewModel.level.canGoDown == false)
-				}
-			}
-			if viewModel.totalPlaces > 0 {
-				Text("\(viewModel.visitedPlaces.count)/\(viewModel.totalPlaces)")
-					.font(.system(size: 120))
-					.lineLimit(1)
-					.minimumScaleFactor(0.1)
-					.padding(.horizontal)
-			}
-			
-			HStack {
-				Picker("Type", selection: $viewModel.selectedPlaceTypeID) {
-					ForEach(viewModel.placeTypes) {
-						Text($0.title).tag($0.id)
-					}
-				}
-				Button {
-					showPlaceType = true
-				} label: {
-					Image(systemName: "ellipsis")
-				}
-
-			}
-
-			List {
-				Section("Unvisited", isExpanded: $unvisitedExpanded) {
-					ForEach(viewModel.unvisitedPlaces) { place in
-						view(for: place)
-					}
-				}
-				
-				Section("Visited", isExpanded: $visitedExpanded) {
-					ForEach(viewModel.visitedPlaces) { place in
-						HStack {
-							Image(systemName: "checkmark")
-							view(for: place)
-						}
-					}
-				}
-			}
-			.padding(.top, 20)
+            header
+            bigCount
+			typePicker
+            placeList
+                .padding(.top, 20)
 		}
 		.onAppear {
 			viewModel.onAppear()
@@ -101,6 +39,119 @@ struct ContentView: View {
 			PlaceDebugView()
 		}
 	}
+    
+    private var header: some View {
+        ZStack {
+            HStack {
+                Button(systemName: "dice.fill") {
+                    detailPlace = viewModel.unvisitedPlaces.randomElement()?.place
+                }
+                .padding()
+                
+                Spacer()
+                Button {
+                    showDebug = true
+                } label: {
+                    Image(systemName: "ant.fill")
+                }
+                .padding()
+            }
+            HStack {
+                Button {
+                    viewModel.level = viewModel.level.higherLevel
+                } label: {
+                    Image(systemName: "arrow.up")
+                }
+                .disabled(viewModel.level.canGoUp == false)
+                
+                Text("\(viewModel.placeTitle ?? "Finding location...")").bold()
+                
+                Button {
+                    viewModel.level = viewModel.level.lowerLevel
+                } label: {
+                    Image(systemName: "arrow.down")
+                }
+                .disabled(viewModel.level.canGoDown == false)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var bigCount: some View {
+        if viewModel.totalPlaces > 0 {
+            Text("\(viewModel.visitedPlaces.count)/\(viewModel.totalPlaces)")
+                .font(.system(size: 120))
+                .lineLimit(1)
+                .minimumScaleFactor(0.1)
+                .padding(.horizontal)
+        }
+    }
+    
+    private var typePicker: some View {
+        HStack {
+            Picker("Type", selection: $viewModel.selectedPlaceTypeID) {
+                ForEach(viewModel.placeTypes) {
+                    Text($0.title).tag($0.id)
+                }
+            }
+            
+            Button {
+                showPlaceType = true
+            } label: {
+                Image(systemName: "ellipsis")
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private var placeList: some View {
+        VStack {
+            if let error = viewModel.error {
+                listBackground {
+                    Text(error)
+                        .bold()
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 20))
+                        .padding()
+                }
+            } else if viewModel.loading {
+                listBackground {
+                    ProgressView().progressViewStyle(.circular)
+                }
+            } else {
+                populatedList
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private func listBackground(_ content: () -> some View) -> some View {
+        ZStack {
+            Rectangle()
+                .fill(Color(uiColor: .systemGroupedBackground))
+            content()
+        }
+        .ignoresSafeArea()
+    }
+    
+    private var populatedList: some View {
+        List {
+            Section("Unvisited", isExpanded: $unvisitedExpanded) {
+                ForEach(viewModel.unvisitedPlaces) { place in
+                    view(for: place)
+                }
+            }
+            
+            Section("Visited", isExpanded: $visitedExpanded) {
+                ForEach(viewModel.visitedPlaces) { place in
+                    HStack {
+                        Image(systemName: "checkmark")
+                        view(for: place)
+                    }
+                }
+            }
+        }
+    }
 	
 	private func view(for row: PlaceListRow) -> some View {
 		Button {
